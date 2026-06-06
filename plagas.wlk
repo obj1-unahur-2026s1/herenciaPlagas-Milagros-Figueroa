@@ -16,6 +16,7 @@ class Cucarachas inherits Plaga {
     override method nivelDeDaño() { return poblacion / 2 }
     override method condicionAdicional() { return pesoPromedio >= 10 }
     override method atacar(unElemento){
+        // Cuando vos heredas algo y lo modificas con override, si usas super usas lo del padre
         //ejecuta el metodo en la clase padre
         super(unElemento)
         pesoPromedio = pesoPromedio + 2

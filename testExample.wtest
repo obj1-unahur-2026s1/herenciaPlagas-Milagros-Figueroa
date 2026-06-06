@@ -1,9 +1,19 @@
-import example.pepita
+import elementos.*
+import plagas.*
 
-describe "group of tests for pepita" {
+describe "test plagas" {
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
-  }
+ const c1 = new Cucarachas(poblacion=20, pesoPromedio=8)
+ const h1 = new Hogar(mugre=10, confort=21)
+
+
+ test "El hogar h1 es bueno si no recibe un ataque" {
+    assert.that(h1.esBueno())
+ }
+
+ test "El hogar h1 no es bueno si recibe un ataque de c1" {
+    c1.atacar(h1)
+    assert.notThat(h1.esBueno())
+ }
 
 }
